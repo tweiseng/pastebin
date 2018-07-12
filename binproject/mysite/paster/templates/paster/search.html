@@ -1,0 +1,10 @@
+{%for i in pastes%}
+  {%if i.is_expired != true %}
+    <li><a href="/{{ i.paste_url }}">{{i.paste_name}}</a></li>
+          <p>Content:</p>
+          <p>{{i.paste_content|linebreaks}}</p>
+  {%endif%}
+{% endfor %}
+
+
+

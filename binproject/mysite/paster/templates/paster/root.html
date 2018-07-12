@@ -1,0 +1,19 @@
+<form action="{% url 'paster:search' %}" method="get">
+    <label for="name">Search by name of paste:</label><br>
+    <input id='name' type='text' name='nama' maxlength='200' size='50'><br><br>
+    <input type="submit" value="Search" />
+</form>
+<hr>
+<br>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<form action="{% url 'paster:paste' %}" method="post">
+	{% csrf_token %}
+	<label for="name">Name of post:</label><br>
+    <input id='name' type='text' name='name' maxlength='200' size='70'><br><br>
+    <label for="content">Content of post:</label><br>
+    <textarea name='content' rows="10" cols="150"></textarea><br><br>
+    <label for="date of expiry">Date of expiry</label><br>
+    <input type="date" name ='date_of_expiry'><br><br>
+	<input type="submit" value="Paste" />
+</form>

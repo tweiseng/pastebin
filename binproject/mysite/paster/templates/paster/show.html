@@ -1,0 +1,12 @@
+<h1>Name of paste: {{ paste.paste_name }}</h1>
+
+<p>Content of paste:</p>
+
+<p>{{paste.paste_content|linebreaks}}</p>
+
+
+<form action="/{{paste.paste_url}}/delete" method="post">
+	{% csrf_token %}
+	<input type="submit" name="delete" value="Delete" />
+</form>
+
